@@ -1,0 +1,7 @@
+com\carros\domain\Carro.class
+com\carros\domain\CarroRepository.class
+com\carros\domain\dto\CarroDTO.class
+com\carros\domain\CarroService.class
+com\carros\api\IndexController.class
+com\carros\CarrosApplication.class
+com\carros\api\CarrosController.class
