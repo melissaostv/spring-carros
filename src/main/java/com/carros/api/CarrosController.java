@@ -3,7 +3,11 @@ package com.carros.api;
 import java.net.URI;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
+import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.Gauge;
+import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -26,16 +30,31 @@ public class CarrosController {
 	@Autowired
 	private CarroService service;
 
+	private final MeterRegistry meterRegistry;
+
+	public CarrosController(MeterRegistry meterRegistry) {
+		this.meterRegistry = meterRegistry;
+	}
+
 	@GetMapping()
 	public ResponseEntity<List<CarroDTO>> get() {
 		return ResponseEntity.ok(service.getCarros());
 		//return new ResponseEntity<>(service.getCarros(), HttpStatus.OK);
 	}
+
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<CarroDTO> get(@PathVariable("id") Long id){
 		Optional<CarroDTO> carro = service.getCarrosById(id);
-		
+
+		Counter counter = Counter.builder("quantidade_de_carros_pesquisados")
+				.tag("carros_pesquisados", "carros")
+				.description("Quantidade de carros pesquisados")
+				.register(meterRegistry);
+
+		counter.increment();
+
+
 		return carro
 				.map(ResponseEntity::ok)
 				.orElse(ResponseEntity.notFound().build());
@@ -55,6 +74,14 @@ public class CarrosController {
 		}else {
 			return ResponseEntity.notFound().build();	
 		}*/
+	}
+
+	@GetMapping("/km")
+	public ResponseEntity kmCarros(){
+		Gauge.builder("km_rodado", () -> new Random().nextInt(100))
+				.description("Mede a km do carro")
+				.register(meterRegistry);
+		return ResponseEntity.ok("Ok");
 	}
 	
 	@GetMapping("/tipo/{tipo}")

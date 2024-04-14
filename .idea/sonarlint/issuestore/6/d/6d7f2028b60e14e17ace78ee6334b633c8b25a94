@@ -1,0 +1,12 @@
+
+X
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ
+V	java:S125"<This block of commented-out lines of code should be removed.(Öµçªûÿÿÿÿ
+V	java:S125""<This block of commented-out lines of code should be removed.(Çà§¹úÿÿÿÿ
+M
+java:S11351"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ
+E	java:S106>"+Replace this use of System.out by a logger.(ô¾š’úÿÿÿÿ
+V	java:S125G"<This block of commented-out lines of code should be removed.(Æèî™þÿÿÿÿ
+M
+java:S1135R"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ
+V	java:S125Y"<This block of commented-out lines of code should be removed.(ß‘Ç‰ûÿÿÿÿ
