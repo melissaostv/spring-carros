@@ -1,19 +1,13 @@
 
 L
-java:S3740P"/Provide the parametrized type for this generic.(Å°˜¯8İùêÎí1
+java:S3740?"/Provide the parametrized type for this generic.(Å°˜¯8İùêÎí1
 _
 java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8åîèÎí1
 O
-java:S6863h"2Set a HttpStatus code reflective of the operation.(‡«åŞ8èîèÎí1
-X	java:S125*"<This block of commented-out lines of code should be removed.(´Ú²‡8òîèÎí1
-X	java:S125?"<This block of commented-out lines of code should be removed.(§â·²8øîèÎí1
-X	java:S125D"<This block of commented-out lines of code should be removed.(ÀĞÀ´8øîèÎí1
-]	java:S125G"<This block of commented-out lines of code should be removed.(ï¬æ¢üÿÿÿÿ8ùîèÎí1
+java:S6863W"2Set a HttpStatus code reflective of the operation.(‡«åŞ8èîèÎí1
 @
-java:S2119Q"Save and re-use this "Random".(‹¬Ñ’úÿÿÿÿ8…ïèÎí1
+java:S2119@"Save and re-use this "Random".(‹¬Ñ’úÿÿÿÿ8…ïèÎí1
 b
-java:S4684a"@Replace this persistent entity with a simple POJO or DTO object.(ò–·†úÿÿÿÿ8ïèÎí1
-]	java:S125n"<This block of commented-out lines of code should be removed.(ô–…àşÿÿÿÿ8–ïèÎí1
-X	java:S125p"<This block of commented-out lines of code should be removed.(°àşÃ8–ïèÎí1
+java:S4684P"@Replace this persistent entity with a simple POJO or DTO object.(ò–·†úÿÿÿÿ8ïèÎí1
 b
-java:S4684y"@Replace this persistent entity with a simple POJO or DTO object.(Šñ†ÿÿÿÿÿ8›ïèÎí1
+java:S4684d"@Replace this persistent entity with a simple POJO or DTO object.(Šñ†ÿÿÿÿÿ8İ•ãìí1

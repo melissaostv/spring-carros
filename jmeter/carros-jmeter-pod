@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jmeter-test-pod
+spec:
+  containers:
+  - name: jmeter
+    image: melissaost/carros-jmeter:1.0
+    command: ["sh", "-c", "jmeter -n -t /jmeter/test.jmx -l /jmeter/result.csv"]

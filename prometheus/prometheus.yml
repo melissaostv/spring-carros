@@ -27,4 +27,4 @@ scrape_configs:
     metrics_path: "/actuator/prometheus"
     scrape_interval: 15s
     static_configs:
-      - targets: [ "carros-app:8080" ]
+      - targets: [ "10.105.245.233:8080" ] #ip do service de app-carros

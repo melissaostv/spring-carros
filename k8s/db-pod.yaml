@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: db-pod
+  labels:
+    tier: database
+spec:
+  containers: 
+  - image: melissaost/carrosql:1.0
+    name: db-pod
+    envFrom:
+    - configMapRef:
+        name: db-prod
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      valueFrom:
+        configMapKeyRef:
+          name: db-prod
+          key: database_password
+    ports:
+    - containerPort: 3306

@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: prometheus
+  labels:
+    app: prometheus
+spec:
+  containers:
+    - name: prometheus
+      image: prom/prometheus
+      ports:
+        - containerPort: 9090
+      volumeMounts:
+        - name: config-volume
+          mountPath: /etc/prometheus
+        - name: prometheus-volume
+          mountPath: /prometheus
+  initContainers:
+    - name: prometheus-data
+      image: busybox
+      command: ["/bin/chmod", "-R", "777", "/data"]
+      volumeMounts:
+        - name: prometheus-volume
+          mountPath: /data
+  volumes:
+    - name: config-volume
+      configMap:
+        name: prometheus-cm
+    - name: prometheus-volume
+      persistentVolumeClaim:
+        claimName: volume-carros-pvc

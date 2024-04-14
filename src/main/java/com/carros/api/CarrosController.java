@@ -39,7 +39,6 @@ public class CarrosController {
 	@GetMapping()
 	public ResponseEntity<List<CarroDTO>> get() {
 		return ResponseEntity.ok(service.getCarros());
-		//return new ResponseEntity<>(service.getCarros(), HttpStatus.OK);
 	}
 
 	
@@ -58,22 +57,6 @@ public class CarrosController {
 		return carro
 				.map(ResponseEntity::ok)
 				.orElse(ResponseEntity.notFound().build());
-		
-	/*	return carro.map(c -> ResponseEntity.ok(c))
-				.orElse(ResponseEntity.notFound().build());*/
-		
-		// -- primeira forma
-		/*return carro.isPresent() ?
-				ResponseEntity.ok(carro.get()) :
-				ResponseEntity.notFound().build();*/
-		
-		// -- segunda forma
-		/*if(carro.isPresent()) {
-			return ResponseEntity.ok(carro.get());
-			
-		}else {
-			return ResponseEntity.notFound().build();	
-		}*/
 	}
 
 	@GetMapping("/km")
@@ -106,10 +89,6 @@ public class CarrosController {
 		}catch(Exception e) {
 			return ResponseEntity.badRequest().build();
 		}
-		
-		//Carro c = service.insert(carro);
-	
-		//return "Carro salvo com sucesso: " + c.getId();
 	}
 	
 	private URI getUri(Long id) {

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-prod
+data:
+  database_url: http://192.168.0.2
+  database_user: root
+  database_password: "123456"

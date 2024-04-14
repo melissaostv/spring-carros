@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-carros-pod  #pod
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: api-carros #servidor
+  template:
+    metadata:
+      name: app-carros-pod #pod
+      labels:
+        app: api-carros #servidor
+    spec:
+      containers:
+      - image: melissaost/spring-carros:2.1
+        name: app-carros-pod #pod
+        readinessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 59
+          periodSeconds: 59
+          failureThreshold: 3
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          periodSeconds: 30
+          failureThreshold: 2

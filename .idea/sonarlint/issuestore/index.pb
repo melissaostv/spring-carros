@@ -32,3 +32,11 @@ a
 1src/main/java/com/carros/domain/CarroService.java,6\d\6d7f2028b60e14e17ace78ee6334b633c8b25a94
 I
 prometheus/prometheus.yml,2\1\2195c72987a6b3f2c1afeaf7568ad8d407cc8eb8
+F
+jmeter/CarrosTests.jmx,5\3\53c27c3cf5ea42f7efdfd30f34d3c7d1fb2eca45
+A
+jmeter/Dockerfile,4\5\459280c3cc55485233966c8912d5a62bc1668aed
+H
+jmeter/carros-jmeter-pod,a\2\a2b23d026ab9946974f0eb3d2bd64ed671e627a4
+M
+jmeter/carros-jmeter-pod.yaml,c\c\cc0703b625c538a6badfdd34878fa55055bea81e
